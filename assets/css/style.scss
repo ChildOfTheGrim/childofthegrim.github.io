@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+$mainPlava: #00a2ed;
+$secondPlava: #0078d7;
+$bela: whitesmoke;
+$crna: #121212;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+// webkits
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: $bela;
+}
+::-webkit-scrollbar-thumb {
+  background: $mainPlava;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $secondPlava;
+}
+// mixins
+@mixin pb20px {
+  padding-bottom: 20px;
+}
+@mixin py20px {
+  padding: 20px 0px;
+}
+@mixin w100 {
+  width: 100%;
+}
+@mixin w80 {
+  width: 80%;
+}
+@mixin w48 {
+  width: 48%;
+}
+@mixin w30 {
+  width: 30%;
+}
+@mixin dflex {
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin around {
+  justify-content: space-around;
+}
+@mixin between {
+  justify-content: space-between;
+}
+@mixin center {
+  justify-content: center;
+}
+@mixin p20 {
+  padding: 20px 0px;
+}
+@mixin tacenter {
+  text-align: center;
+}
+@mixin auto {
+  margin: 0px auto;
+}
+.pb50px {
+  padding-bottom: 50px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: $crna;
+  color: $bela;
+}
+ul {
+  list-style-type: none;
+  @include tacenter;
+}
+a {
+  text-decoration: none;
+  color: $bela;
+}
+
+header {
+  position: fixed;
+  @include w100;
+  background-color: $mainPlava;
+  z-index: 2;
+}
+.container {
+  @include w80;
+  @include auto;
+  @include dflex;
+  @include between;
+}
+nav {
+  ul {
+    @include dflex;
+    @include center;
+    li {
+      padding: 10px;
+      a {
+        position: relative;
+        display: block;
+        color: $bela;
+        transition: 0.5s;
+        &::after {
+          position: absolute;
+          content: "";
+          top: 100%;
+          left: 0;
+          @include w100;
+          height: 3px;
+          background: $bela;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.5s;
+        }
+
+        &:hover {
+          color: $bela;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+}
+
+#cover {
+  height: 100vh;
+  background-image: url("../img/cover.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include dflex;
+  @include center;
+  align-items: center;
+  .naslov {
+    @include w48;
+    @include tacenter;
+    z-index: 1;
+    background-color: rgba($color: $crna, $alpha: 0.9);
+    h1 {
+      font-size: 80px;
+      color: $bela;
+      padding-top: 30px;
+    }
+    p {
+      font-size: 30px;
+      color: $mainPlava;
+      padding-bottom: 30px;
+    }
+    span {
+      color: $mainPlava;
+    }
+  }
+}
+.content {
+  @include w80;
+  @include auto;
+  padding-top: 30px;
+  .content-naslov {
+    @include tacenter;
+    @include py20px;
+  }
+  @include w100;
+  .services {
+    @include dflex;
+    @include around;
+    @include w80;
+    @include auto;
+    @include tacenter;
+    @include p20;
+    .service {
+      border: 2px solid $secondPlava;
+      border-radius: 25px;
+      margin-bottom: 20px;
+      @include w30;
+      i {
+        font-size: 70px;
+        @include py20px;
+      }
+      h2 {
+        font-size: 20px;
+        @include pb20px;
+      }
+      p {
+        font-size: 16px;
+        @include pb20px;
+      }
+    }
+  }
+  .skills {
+    @include dflex;
+    @include around;
+    @include pb20px;
+    @include w80;
+    @include auto;
+    .skill {
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+      }
+      .flip-card-inner {
+        position: relative;
+        @include w100;
+        height: 100%;
+        @include tacenter;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        @include w100;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 50%;
+      }
+      .flip-card-front {
+        color: black;
+      }
+      .flip-card-front img {
+        width: 300px;
+        height: 300px;
+      }
+      .flip-card-back {
+        background-color: $mainPlava;
+        color: $bela;
+        transform: rotateY(180deg);
+        h2 {
+          @include py20px;
+        }
+        p {
+          margin: 10px;
+        }
+      }
+    }
+  }
+  .projects {
+    @include dflex;
+    @include between;
+    @include w80;
+    @include auto;
+    .project {
+      @include w30;
+      position: relative;
+      img {
+        @include w100;
+        backface-visibility: hidden;
+        transition: 1s ease;
+        border-radius: 10px;
+        height: 100%;
+      }
+      .middle {
+        transition: 1s ease;
+        display: none;
+        position: absolute;
+        @include w100;
+        height: 100%;
+        top: 0%;
+        border-radius: 10px;
+      }
+      .info {
+        position: relative;
+        font-size: 18px;
+        font-weight: bold;
+        color: $bela;
+        padding: 10px 0;
+      }
+      &:hover {
+        .middle {
+          display: block;
+        }
+        .info {
+          animation: text 0.5s;
+          animation-fill-mode: forwards;
+          background-color: $secondPlava;
+          border-radius: 0px 0px 10px 10px;
+        }
+        img {
+          filter: grayscale(100%);
+        }
+      }
+      p {
+        @include tacenter;
+      }
+    }
+  }
+  .about {
+    @include dflex;
+    @include center;
+    .image {
+      @include w30;
+      img {
+        border-radius: 50%;
+      }
+    }
+    .text {
+      @include w30;
+      text-align: justify;
+      :first-child {
+        padding-top: 10px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+  .contact {
+    @include dflex;
+    @include around;
+    .mapa {
+      width: 40%;
+      iframe {
+        @include w100;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+    .forma {
+      @include w48;
+      input[type="text"],
+      input[type="email"],
+      input[type="mobile"] {
+        @include w100;
+        padding: 15px 10px;
+        outline: none;
+        border-top: none;
+        border-left: 3px solid $secondPlava;
+        border-right: none;
+        border-bottom: none;
+        background-color: $crna;
+      }
+      textarea {
+        @include w100;
+        outline: none;
+        border-top: none;
+        border-left: 3px solid $secondPlava;
+        border-right: none;
+        border-bottom: none;
+        background-color: $crna;
+        padding: 15px 10px;
+      }
+      input[type="submit"],
+      input[type="reset"] {
+        @include w30;
+        padding: 10px 10px;
+        background-color: $secondPlava;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        @include around;
+      }
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background: none;
+        box-shadow: 0 0 3pt 2pt $secondPlava;
+        transition: 0.5s;
+        color: $secondPlava;
+      }
+      .polje {
+        @include w100;
+        padding: 30px 10px;
+      }
+      .polje input[type="text"]:focus,
+      .polje input[type="email"]:focus,
+      .polje input[type="mobile"]:focus,
+      textarea:focus {
+        animation-name: forma;
+        animation-duration: 1s;
+        color: $bela;
+        border: none;
+        border-radius: 10px;
+        background-color: $secondPlava;
+      }
+      .centrirani {
+        @include w100;
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+}
+footer {
+  @include dflex;
+  @include around;
+  @include tacenter;
+  padding: 20px 0px 5px 0px;
+  background-color: $mainPlava;
+  .copyright {
+    @include w100;
+    padding-top: 20px;
+    text-align: center;
+    p {
+      a {
+        color: $crna;
+        font-weight: bold;
+      }
+    }
+  }
+  .soc{
+    @include dflex;
+    @include center;
+    li{
+      padding: 10px 20px;
+    }
+    i{
+      font-size: 24px;
+    }
+  }
+}
+// keyframes
+@keyframes forma {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes text {
+  from {
+    top: 0%;
+  }
+  to {
+    top: 80%;
+  }
+}
