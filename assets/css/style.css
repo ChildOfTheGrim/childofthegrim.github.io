@@ -161,7 +161,6 @@ nav ul li a:hover::after {
   width: 80%;
   margin: 0px auto;
   padding-top: 30px;
-  width: 100%;
 }
 
 .content .content-naslov {
@@ -553,6 +552,35 @@ footer .soc i {
   }
   to {
     top: 80%;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .content .projects .project {
+    width: 45%;
+  }
+  .content .projects .project:nth-child(3) {
+    margin: 20px auto 0;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .content .services .service {
+    width: 45%;
+    padding: 5px 15px;
+  }
+  .content .projects .project {
+    width: 100%;
+    margin: 0 0 50px 0;
+  }
+  .content .projects .project:nth-child(3) {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .content .services .service {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

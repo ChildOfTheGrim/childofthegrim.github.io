@@ -39,6 +39,9 @@ $crna: #121212;
 @mixin w48 {
   width: 48%;
 }
+@mixin w45 {
+  width: 45%;
+}
 @mixin w30 {
   width: 30%;
 }
@@ -57,6 +60,9 @@ $crna: #121212;
 }
 @mixin p20 {
   padding: 20px 0px;
+}
+@mixin p5-15 {
+  padding: 5px 15px;
 }
 @mixin tacenter {
   text-align: center;
@@ -166,7 +172,7 @@ nav {
     @include tacenter;
     @include py20px;
   }
-  @include w100;
+  // @include w100;
   .services {
     @include dflex;
     @include around;
@@ -434,5 +440,48 @@ footer {
   }
   to {
     top: 80%;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .content {
+    .projects {
+      .project {
+        @include w45;
+        &:nth-child(3) {
+          margin: 20px auto 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .content {
+    .services {
+      .service {
+        @include w45;
+        @include p5-15;
+      }
+    }
+  }
+  .content {
+    .projects {
+      .project {
+        @include w100;
+        margin: 0 0 50px 0;
+        &:nth-child(3) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 426px) {
+  .content {
+    .services {
+      .service {
+        @include w100;
+      }
+    }
   }
 }
