@@ -222,6 +222,10 @@ nav ul li a:hover::after {
   margin: 0px auto;
 }
 
+.content .skills .skill {
+  margin: 0px 5px 20px 5px;
+}
+
 .content .skills .skill .flip-card {
   background-color: transparent;
   width: 300px;
@@ -283,6 +287,7 @@ nav ul li a:hover::after {
 
 .content .skills .skill .flip-card-back p {
   margin: 10px;
+  padding: 0px 20px;
 }
 
 .content .projects {
@@ -547,7 +552,7 @@ footer .soc i {
     top: 0%;
   }
   to {
-    top: 80%;
+    top: 70%;
   }
 }
 
@@ -556,7 +561,7 @@ footer .soc i {
     top: 0%;
   }
   to {
-    top: 80%;
+    top: 70%;
   }
 }
 
@@ -588,7 +593,7 @@ footer .soc i {
     padding-bottom: 20px;
   }
   .content .skills .skill p {
-    font-size: 10px;
+    font-size: 15px;
   }
   .content .services .service {
     width: 45%;
@@ -626,7 +631,7 @@ footer .soc i {
     background-color: #00a2ed;
     color: white;
     padding: 10px 0px;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     border: none;
     cursor: pointer;

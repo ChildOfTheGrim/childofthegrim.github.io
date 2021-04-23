@@ -209,6 +209,8 @@ nav {
     @include w80;
     @include auto;
     .skill {
+      margin: 0px 5px 20px 5px;
+
       .flip-card {
         background-color: transparent;
         width: 300px;
@@ -220,6 +222,7 @@ nav {
         @include w100;
         height: 100%;
         @include tacenter;
+        
         transition: transform 0.6s;
         transform-style: preserve-3d;
         box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0.2);
@@ -253,6 +256,7 @@ nav {
         }
         p {
           margin: 10px;
+          padding: 0px 20px;
         }
       }
     }
@@ -442,7 +446,7 @@ footer {
     top: 0%;
   }
   to {
-    top: 80%;
+    top: 70%;
   }
 }
 // responsive
@@ -484,7 +488,7 @@ footer {
           padding-bottom: 20px;
         }
         p{
-          font-size: 10px;
+          font-size: 15px;
         }
       }
     }
@@ -535,7 +539,7 @@ footer {
         background-color: $mainPlava;
         color: white;
         padding: 10px 0px;
-        font-size: 50px;
+        font-size: 30px;
         font-weight: bold;
         border: none;
         cursor: pointer;
@@ -586,7 +590,7 @@ footer {
   }
   .content {
     .skills{
-      .skill{
+      .skill{   
         margin-bottom: 20px;
         p{
           font-size: 15px;
