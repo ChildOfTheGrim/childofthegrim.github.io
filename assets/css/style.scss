@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 $mainPlava: #00a2ed;
 $secondPlava: #0078d7;
-$bela: whitesmoke;
+$bela: #F5F5F5;
 $crna: #121212;
 * {
   padding: 0;
@@ -36,17 +36,8 @@ $crna: #121212;
 @mixin w80 {
   width: 80%;
 }
-@mixin w60 {
-  width: 60%;
-}
 @mixin w48 {
   width: 48%;
-}
-@mixin w45 {
-  width: 45%;
-}
-@mixin w40 {
-  width: 40%;
 }
 @mixin w30 {
   width: 30%;
@@ -468,7 +459,7 @@ footer {
     }
     .projects {
       .project {
-        @include w45;
+        @include w48;
         &:nth-child(3) {
           margin: 20px auto 0;
         }
@@ -479,7 +470,7 @@ footer {
         @include w30;
       }
       .text {
-        @include w60;
+        width: 60%;
         font-size: 16px;
       }
     }
@@ -501,7 +492,7 @@ footer {
   .content {
     .services {
       .service {
-        @include w45;
+        @include w48;
         padding: 5px 15px;
       }
     }
