@@ -614,16 +614,7 @@ footer .soc i {
   }
 }
 
-@media screen and (max-width: 426px) {
-  header .container {
-    /* Style The Dropdown Button */
-    /* The container <div> - needed to position the dropdown content */
-    /* Dropdown Content (Hidden by Default) */
-    /* Links inside the dropdown */
-    /* Change color of dropdown links on hover */
-    /* Show the dropdown menu on hover */
-    /* Change the background color of the dropdown button when the dropdown content is shown */
-  }
+@media screen and (max-width: 690px) {
   header .container .logo {
     width: 100%;
     text-align: center;
@@ -635,7 +626,7 @@ footer .soc i {
     background-color: #00a2ed;
     color: white;
     padding: 10px 0px;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -669,7 +660,10 @@ footer .soc i {
     display: block;
   }
   header .container .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #005da8;
+  }
+  #cover .naslov {
+    width: 80%;
   }
   #cover .naslov h1 {
     font-size: 23px;
