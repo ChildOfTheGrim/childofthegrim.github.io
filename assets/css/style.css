@@ -68,6 +68,10 @@ header {
           justify-content: space-between;
 }
 
+.container .logo h2 {
+  font-size: 30px;
+}
+
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;

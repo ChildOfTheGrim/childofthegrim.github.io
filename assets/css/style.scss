@@ -101,6 +101,11 @@ header {
   @include auto;
   @include dflex;
   @include between;
+  .logo{
+    h2{
+      font-size: 30px;
+    }
+  }
 }
 nav {
   ul {
